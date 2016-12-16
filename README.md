@@ -4,7 +4,7 @@
 
 ### :pushpin: Demo - [CRUD Demo with AngularJS](http://showcase.sharadshinde.in/crud-angular)
 
-![Demo image](https://shindesharad71.github.io/Angular-PHP-CRUD-Oprations/screen.png)
+![Demo image](https://github.com/shindesharad71/Angular-PHP-CRUD-Oprations/blob/master/screen.PNG?raw=true)
 
 ### :pushpin: Resources Used while Making
 * PHP
