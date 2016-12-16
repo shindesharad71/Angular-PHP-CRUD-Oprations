@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="crudapp">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -18,24 +18,24 @@
     <script type="text/javascript" src="app/app.js"></script>
 </head>
 
-<body>
-    <div class="container" ng-controller="AppController as con1">
+<body ng-app="crudapp">
+    <div class="container" ng-controller="AppController">
         <h1 class="text-center">Angular PHP CRUD Oprations</h1>
         <br>
         <form>
             <div class="input-field col-md-3">
-                <input id="first_name" ng-model="con1.item.name" type="text" required class="validate">
+                <input id="first_name" ng-model="name" type="text" required class="validate">
                 <label for="first_name">Name</label>
             </div>
             <div class="input-field col-md-3">
-                <input id="email" type="email" ng-model="con1.item.email" required class="validate">
+                <input id="email" type="email" ng-model="email" required class="validate">
                 <label for="email">Email</label>
             </div>
             <div class="input-field col-md-3">
-                <input id="password" type="password" ng-model="con1.item.password" required class="validate">
+                <input id="password" type="password" ng-model="password" required class="validate">
                 <label for="password">Password</label>
             </div>
-            <button ng-click="con1.SubmitForm();" class="btn btn-primary waves-effect waves-light"><i class="fa fa-plus"></i> Add Record</button>
+            <button ng-click="AddIt();" class="btn btn-primary waves-effect waves-light"><i class="fa fa-plus"></i> Add Record</button>
         </form>
         <br>
         <div class="row">
@@ -52,13 +52,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="item in con1.dataArray">
+                        <tr ng-repeat="item in items">
                             <td>{{item.name}}</td>
                             <td>{{item.email}}</td>
                             <td>{{item.password}}</td>
                             <td>
-                                <a href="#" class="btn btn-sm btn-info waves-effect waves-light"><i class="fa fa-pencil"></i></a>
-                                <a href="#" class="btn btn-sm btn-danger waves-effect waves-light"><i class="fa fa-trash"></i></a>
+                                <button ng-click="EditIt(item.id);" class="btn btn-sm btn-info waves-effect waves-light"><i class="fa fa-pencil"></i></button>
+                                <button ng-click="DeleteIt(item.id);" class="btn btn-sm btn-danger waves-effect waves-light"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
                     </tbody>

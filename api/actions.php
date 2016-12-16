@@ -19,10 +19,10 @@
 
 
 
-$insert = "INSERT into angular (id,  name, email, password) VALUES ('$name',  '$email', '$password')";
+$insert = "INSERT into info (id,  name, email, password) VALUES ('$name',  '$email', '$password')";
 
-$update = "UPDATE angular SET name='$name', password='$password', email='$email' WHERE id='$id'";
+$update = "UPDATE info SET name='$name', password='$password', email='$email' WHERE id='$id'";
 
-$delete = "DELETE FROM angular WHERE id='$id";
+$delete = "DELETE FROM info WHERE id='$id";
 
-$select = "SELECT * FROM angular";
+$select = "SELECT * FROM info";
