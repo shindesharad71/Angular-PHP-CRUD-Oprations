@@ -18,7 +18,7 @@
     }
 
     $data = array();
-    $query = "SELECT * FROM info";
+    $query = "SELECT * FROM info ORDER BY id DESC";
     $result = mysqli_query($con,$query);
     while($row = mysqli_fetch_assoc($result))
     {

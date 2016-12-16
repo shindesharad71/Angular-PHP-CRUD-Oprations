@@ -2,6 +2,8 @@ var app = angular.module("crudapp", []);
 
 app.controller('AppController', function($scope, $http) {
 
+    ReadIt(); // load all information first
+
     function ReadIt() {
         $http.get("api/ReadIt.php").success(function(data) {
             $scope.items = data;
@@ -10,14 +12,11 @@ app.controller('AppController', function($scope, $http) {
         })
     }
 
-
-    ReadIt();
-
     $scope.AddIt = function() {
 
         $http.post("api/AddIt.php", { name: $scope.name, email: $scope.email, password: $scope.password }).
         success(function(data, status, headers, config) {
-            console.log(data);
+            ReadIt(); //refresh all information
         }).error(function(data, status, headers, config) {
             console.log(data);
         });
@@ -26,7 +25,7 @@ app.controller('AppController', function($scope, $http) {
         $scope.email = "";
         $scope.password = "";
 
-        //ReadIt(); //refresh all information
+
     }
 
     $scope.DeleteIt = function(item) {
