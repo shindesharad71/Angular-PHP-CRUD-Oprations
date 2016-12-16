@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="crudapp">
 
 <head>
     <meta charset="utf-8">
@@ -19,33 +19,32 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" ng-controller="AppController as con1">
         <h1 class="text-center">Angular PHP CRUD Oprations</h1>
         <br>
         <form>
             <div class="input-field col-md-3">
-                <input id="first_name" type="text" required class="validate">
+                <input id="first_name" ng-model="con1.item.name" type="text" required class="validate">
                 <label for="first_name">Name</label>
             </div>
             <div class="input-field col-md-3">
-                <input id="email" type="email" required class="validate">
+                <input id="email" type="email" ng-model="con1.item.email" required class="validate">
                 <label for="email">Email</label>
             </div>
             <div class="input-field col-md-3">
-                <input id="password" type="password" required class="validate">
+                <input id="password" type="password" ng-model="con1.item.password" required class="validate">
                 <label for="password">Password</label>
             </div>
-            <button ng-click="SubmitForm();" class="btn btn-primary waves-effect waves-light"><i class="fa fa-plus"></i> Add Record</button>
+            <button ng-click="con1.SubmitForm();" class="btn btn-primary waves-effect waves-light"><i class="fa fa-plus"></i> Add Record</button>
         </form>
         <br>
-        <div class="row" ng-app="crudapp">
-            <div class="col-md-offset-1 col-md-10" ng-controller="AppController as con1">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
                 <br>
                 <h4 class="text-center">The Information</h4>
                 <table class="table table-hover table-bordered">
                     <thead class="alert-warning">
                         <tr>
-                            <th width="7%">ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Password</th>
@@ -54,20 +53,9 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="item in con1.dataArray">
-                            <td>{{item.id}}</td>
                             <td>{{item.name}}</td>
                             <td>{{item.email}}</td>
                             <td>{{item.password}}</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-info waves-effect waves-light"><i class="fa fa-pencil"></i></a>
-                                <a href="#" class="btn btn-sm btn-danger waves-effect waves-light"><i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>John Doe</td>
-                            <td>john@example.com</td>
-                            <td>12345</td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-info waves-effect waves-light"><i class="fa fa-pencil"></i></a>
                                 <a href="#" class="btn btn-sm btn-danger waves-effect waves-light"><i class="fa fa-trash"></i></a>
