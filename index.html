@@ -40,11 +40,34 @@
         <br>
         <div class="row" ng-app="crudapp">
             <div class="col-md-offset-1 col-md-10">
-                <div ng-include="'table.html'" scope="" onload=""></div>
-                <div ng-controller="AppController as con1">
-                </div>
+                <br>
+                <h3 class="text-center">The Information</h3>
+                <table class="table table-hover table-bordered">
+                    <thead class="alert-warning">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>12345</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-info waves-effect waves-light"><i class="fa fa-pencil"></i></a>
+                                <a href="#" class="btn btn-sm btn-danger waves-effect waves-light"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
     </div>
     <!-- SCRIPTS -->
     <!-- JQuery -->
