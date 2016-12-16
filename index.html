@@ -51,7 +51,7 @@
                             <th width="17%">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody ng-init="ReadIt()">
                         <tr ng-repeat="item in items">
                             <td>{{item.name}}</td>
                             <td>{{item.email}}</td>

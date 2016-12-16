@@ -2,13 +2,16 @@ var app = angular.module("crudapp", []);
 
 app.controller('AppController', function($scope, $http) {
 
-    //ReadIt(); //load all information
-
-    /*function ReadIt() {
+    function ReadIt() {
         $http.get("api/ReadIt.php").success(function(data) {
             $scope.items = data;
-        });
-    }*/
+        }).error(function(data, status, headers, config) {
+            console.log(data);
+        })
+    }
+
+
+    ReadIt();
 
     $scope.AddIt = function() {
 
@@ -24,7 +27,7 @@ app.controller('AppController', function($scope, $http) {
         $scope.password = "";
 
         //ReadIt(); //refresh all information
-    };
+    }
 
     $scope.DeleteIt = function(item) {
         alert(item + ' Delete');

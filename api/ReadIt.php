@@ -17,7 +17,13 @@
         die();
     }
 
+    $data = array();
     $query = "SELECT * FROM info";
     $result = mysqli_query($con,$query);
-    $row = mysqli_fetch_assoc($result);
-    echo $json_response = json_encode($row);
+    while($row = mysqli_fetch_assoc($result))
+    {
+        $data[] = $row;
+    }
+
+    echo $json_response = json_encode($data);
+?>

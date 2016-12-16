@@ -22,7 +22,6 @@
 	if (empty($_POST['name']))
 		echo 'name empty';
 		$name = $_POST['name'];
-		echo $name;
   
 	if (empty($_POST['email']))
 		echo 'email empty';
