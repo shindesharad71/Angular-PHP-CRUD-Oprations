@@ -23,21 +23,21 @@
     <div class="container" ng-controller="AppController">
         <h1 class="text-center">Angular PHP CRUD Oprations</h1>
         <br>
-        <form>
+        <form name="form1" novalidate>
             <div class="input-field col-md-3">
-                <input id="first_name" type="text" ng-model="name" required class="validate">
-                <label for="first_name">Name</label>
+                <input name="name" type="text" placeholder="Name" ng-model="name" required class="validate">
+                <span ng-show="form1.$submitted && form1.name.$error.required" class="text-danger">Name required!</span>
             </div>
             <div class="input-field col-md-3">
-                <input id="email" type="email" ng-model="email" required class="validate">
-                <label for="email">Email</label>
+                <input name="email" type="email" placeholder="Email" ng-model="email" required class="validate">
+                <span ng-show="form1.$submitted && form1.email.$error.required" class="text-danger">Email required!</span>
             </div>
             <div class="input-field col-md-3">
-                <input id="password" type="password" ng-model="password" required class="validate">
-                <label for="password">Password</label>
+                <input name="password" type="password" placeholder="Password" ng-model="password" required class="validate">
+                <span ng-show="form1.$submitted && form1.password.$error.required" class="text-danger">Password required!</span>
             </div>
-            <button ng-click="AddIt();" ng-if="addbtn" class="btn btn-primary waves-effect waves-light"><i class="fa fa-plus"></i> Add</button>
-            <button ng-click="UpdateIt();" ng-if="updatebtn" class="btn btn-success waves-effect waves-light"><i class="fa fa-check"></i> Update</button>
+            <button ng-click="form1.$valid && AddIt();" ng-if="addbtn" class="btn btn-primary waves-effect waves-light"><i class="fa fa-plus"></i> Add</button>
+            <button ng-click="form1.$valid && form1.$dirty && UpdateIt();" ng-if="updatebtn" class="btn btn-success waves-effect waves-light"><i class="fa fa-check"></i> Update</button>
         </form>
         <br>
         <div class="row">
