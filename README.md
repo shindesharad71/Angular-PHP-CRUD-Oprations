@@ -2,8 +2,6 @@
 
 ## A Simple CRUD Operations script using Bootstrap Material, PHP, MySQL and AngularJS 1.4.x
 
-### :pushpin: Demo - [CRUD Demo with AngularJS](http://showcase.sharadshinde.in/crud-angular)
-
 ![Demo image](https://github.com/shindesharad71/Angular-PHP-CRUD-Oprations/blob/master/screen.PNG?raw=true)
 
 ### :pushpin: Resources Used while Making
